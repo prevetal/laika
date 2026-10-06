@@ -1,0 +1,143 @@
+/*------------
+    Prices
+------------*/
+.prices
+{
+    .block_head
+    {
+        padding-inline: var(--outside_gap_s);
+    }
+
+
+    .table_wrap
+    {
+        overflow-x: auto;
+        overflow-y: hidden;
+
+        width: 100%;
+        padding: var(--inner_gap_xs);
+
+        border-radius: var(--border_radius_l);
+        background: var(--bg_primary_soft);
+    }
+
+
+    table
+    {
+        width: 100%;
+
+        border-spacing: 0;
+        border-collapse: collapse;
+
+
+        th
+        {
+            height: 50px;
+            padding-block: var(--inner_gap_xs);
+            padding-inline: var(--inner_gap);
+
+            font-size: var(--font_size_s);
+            font-weight: 600;
+            line-height: 157.143%;
+
+            text-align: center;
+            vertical-align: middle;
+
+            color: var(--light_color);
+            background: var(--primary_strong_color);
+
+
+            &:first-child
+            {
+                border-top-left-radius: 30px;
+                border-bottom-left-radius: 30px;
+            }
+
+
+            &:last-child
+            {
+                border-top-right-radius: 30px;
+                border-bottom-right-radius: 30px;
+            }
+        }
+
+
+        th + th
+        {
+            border-left: 1px solid #754fca;
+        }
+
+
+        td
+        {
+            height: 50px;
+            padding-block: var(--inner_gap_xs);
+            padding-inline: var(--inner_gap);
+
+            font-size: var(--font_size_s);
+            font-weight: 500;
+            line-height: 135.714%;
+
+            text-align: center;
+            vertical-align: middle;
+            white-space: nowrap;
+
+
+            &:first-child
+            {
+                border-top-left-radius: 30px;
+                border-bottom-left-radius: 30px;
+            }
+
+
+            &:last-child
+            {
+                border-top-right-radius: 30px;
+                border-bottom-right-radius: 30px;
+            }
+
+
+            .price
+            {
+                font-weight: 700;
+
+                color: var(--primary_strong_color);
+            }
+        }
+
+
+        td + td
+        {
+            border-left: 1px solid #ebe8f1;
+        }
+
+
+        tr:nth-child(2n)
+        {
+            td
+            {
+                background: var(--bg);
+            }
+        }
+    }
+
+
+    .exp
+    {
+        margin-top: var(--inner_gap_s);
+        padding-inline: var(--inner_gap_xs);
+
+        font-size: 11px;
+        line-height: 145.455%;
+
+        text-align: right;
+
+        opacity: .6;
+    }
+
+
+    .advantages
+    {
+        margin-top: var(--inner_gap_s);
+    }
+}

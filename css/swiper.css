@@ -1,0 +1,114 @@
+.swiper-controls
+{
+    display: flex;
+    align-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: var(--inner_gap_xs);
+
+
+    .swiper-button-next,
+    .swiper-button-prev
+    {
+        position: relative;
+
+        margin: 0;
+
+        transform: none;
+
+        --swiper-navigation-sides-offset: 0;
+    }
+}
+
+
+.swiper-button-next,
+.swiper-button-prev
+{
+    transition: .2s linear;
+
+    border-radius: var(--border_radius);
+    background: var(--bg);
+    box-shadow: 0 5px 25px 0 rgba(0, 0, 0, .10);
+
+    --swiper-navigation-top-offset: 50%;
+    --swiper-navigation-color: #c0b8d2;
+    --swiper-navigation-size: 64px;
+    --swiper-navigation-sides-offset: -54px;
+
+
+    .icon
+    {
+        display: block;
+
+        width: 14px;
+        height: auto;
+
+        aspect-ratio: 1 / 1;
+    }
+
+
+    @media (hover: hover) and (pointer: fine)
+    {
+        &:hover
+        {
+            --swiper-navigation-color: var(--primary_color);
+        }
+    }
+}
+
+
+.swiper-button-prev
+{
+    .icon
+    {
+        transform: rotate(180deg);
+    }
+}
+
+
+.swiper-pagination
+{
+    display: flex;
+    align-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--inner_gap_s);
+
+    pointer-events: none;
+
+    --swiper-pagination-bottom: -30px;
+    --swiper-pagination-bullet-inactive-color: #d9d0ea;
+    --swiper-pagination-bullet-hover-color: var(--primary_color);
+    --swiper-pagination-bullet-active-color: var(--primary_color);
+
+
+    .swiper-pagination-bullet
+    {
+        transition: background .2s linear;
+        transform: rotate(45deg);
+        pointer-events: auto;
+
+        border: 2px solid transparent;
+        background-clip: padding-box;
+
+        --swiper-pagination-bullet-horizontal-gap: 0;
+        --swiper-pagination-bullet-height: 10px;
+        --swiper-pagination-bullet-width: 10px;
+        --swiper-pagination-bullet-inactive-opacity: 1;
+        --swiper-pagination-bullet-border-radius: 3px;
+
+
+        &:hover
+        {
+            background: var(--swiper-pagination-bullet-hover-color);
+        }
+
+        &.active
+        {
+            border-color: var(--swiper-pagination-bullet-active-color);
+            background: var(--swiper-pagination-bullet-active-color);
+        }
+    }
+}

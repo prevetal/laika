@@ -1,0 +1,351 @@
+/*-------------
+    Process
+-------------*/
+.process
+{
+    .data
+    {
+        position: relative;
+
+        overflow: hidden;
+
+        padding-block: var(--block_padding_l) 90px;
+        padding-inline: var(--outside_gap_s);
+
+        color: var(--light_color);
+        border-radius: var(--border_radius_xl);
+        background: var(--bg_dark);
+    }
+
+
+    .block_head
+    {
+        justify-content: flex-start;
+        gap: var(--block_padding);
+
+
+        .title
+        {
+            align-self: center;
+
+            width: 512px;
+        }
+
+
+        .desc
+        {
+            align-self: center;
+
+            width: 337px;
+        }
+
+
+        .swiper-controls
+        {
+            align-self: flex-end;
+
+            margin-left: auto;
+
+
+            .swiper-button-next,
+            .swiper-button-prev
+            {
+                background: rgba(255, 255, 255, .05);
+                box-shadow: 0 5px 25px 0 rgba(0, 0, 0, .10);
+
+                --swiper-navigation-top-offset: 0;
+                --swiper-navigation-color: rgba(255, 255, 255, .3);
+                --swiper-navigation-sides-offset: 0;
+
+
+                @media (hover: hover) and (pointer: fine)
+                {
+                    &:hover
+                    {
+                        background: var(--bg);
+
+                        --swiper-navigation-color: #c0b8d2;
+                    }
+                }
+            }
+        }
+    }
+
+
+    .swiper
+    {
+        overflow: visible;
+
+        --slidesPerView-0: auto;
+        --spaceBetween-0: var(--inner_gap_xs);
+        --slidesPerView-768: auto;
+        --spaceBetween-768: var(--inner_gap_xs);
+        --slidesPerView-1024: 5;
+        --spaceBetween-1024: var(--inner_gap_s);
+        --slidesPerView-1280: 6;
+        --spaceBetween-1280: var(--inner_gap);
+
+
+        &:not(.swiper-initialized)
+        {
+            .swiper-wrapper
+            {
+                gap: var(--spaceBetween-1280);
+            }
+
+
+            .swiper-slide
+            {
+                width: calc(100% / var(--slidesPerView-1280) - var(--spaceBetween-1280));
+            }
+        }
+    }
+
+
+    .swiper-pagination
+    {
+        --swiper-pagination-bottom: -40px;
+        --swiper-pagination-bullet-inactive-color: rgba(217, 208, 234, .2);
+    }
+
+
+    .video_link
+    {
+        position: relative;
+
+        display: block;
+
+        text-decoration: none;
+
+        border-radius: 25px;
+
+
+        .thumb
+        {
+            display: block;
+
+            border-radius: 25px;
+
+            aspect-ratio: 1 / 1.777;
+        }
+
+
+        .icon
+        {
+            position: absolute;
+            inset: 0;
+
+            display: flex;
+            align-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            justify-content: center;
+
+            width: 75px;
+            margin: auto;
+
+            color: var(--light_color);
+            border-radius: 50%;
+            background: var(--primary_strong_color);
+
+            aspect-ratio: 1 / 1;
+
+
+            svg
+            {
+                display: block;
+
+                width: 18px;
+                height: 22px;
+                margin-left: 4px;
+            }
+        }
+    }
+}
+
+
+
+@media print,
+(max-width: 1279px)
+{
+    .process
+    {
+        .cont
+        {
+            padding-inline: 0;
+        }
+
+
+        .data
+        {
+            padding-block: var(--outside_gap_s) var(--outside_gap);
+            padding-inline: var(--cont_padding);
+        }
+
+
+        .block_head
+        {
+            .title
+            {
+                width: 420px;
+            }
+
+
+            .desc
+            {
+                width: 332px;
+            }
+        }
+
+
+        .swiper
+        {
+            &:not(.swiper-initialized)
+            {
+                .swiper-wrapper
+                {
+                    gap: var(--spaceBetween-1024);
+                }
+
+
+                .swiper-slide
+                {
+                    width: calc(100% / var(--slidesPerView-1024) - var(--spaceBetween-1024));
+                }
+            }
+        }
+
+
+        .video_link
+        {
+            .thumb
+            {
+                border-radius: var(--border_radius);
+            }
+
+
+            .icon
+            {
+                width: 64px;
+
+
+                svg
+                {
+                    width: 16px;
+                    height: 20px;
+                }
+            }
+        }
+
+
+        .swiper-pagination
+        {
+            --swiper-pagination-bottom: -35px;
+        }
+    }
+}
+
+
+
+@media print,
+(max-width: 1023px)
+{
+    .process
+    {
+        .block_head
+        {
+            .title
+            {
+                width: 340px;
+            }
+
+
+            .desc
+            {
+                width: calc(100% - 340px - var(--block_padding));
+                margin-left: auto;
+            }
+        }
+
+
+        .swiper
+        {
+            &:not(.swiper-initialized)
+            {
+                .swiper-wrapper
+                {
+                    gap: var(--spaceBetween-768);
+                }
+
+
+                .swiper-slide
+                {
+                    width: 200px;
+                }
+            }
+
+
+            .swiper-slide
+            {
+                width: 200px;
+            }
+        }
+
+
+        .video_link
+        {
+            .thumb
+            {
+                border-radius: var(--border_radius);
+            }
+
+
+            .icon
+            {
+                width: 64px;
+
+
+                svg
+                {
+                    width: 16px;
+                    height: 20px;
+                }
+            }
+        }
+
+
+        .swiper-pagination
+        {
+            --swiper-pagination-bottom: -30px;
+        }
+    }
+}
+
+
+
+@media (max-width: 767px)
+{
+    .process
+    {
+        .block_head
+        {
+            .title,
+            .desc
+            {
+                width: 100%;
+            }
+        }
+
+
+        .swiper
+        {
+            &:not(.swiper-initialized)
+            {
+                .swiper-wrapper
+                {
+                    gap: var(--spaceBetween-0);
+                }
+            }
+        }
+    }
+}

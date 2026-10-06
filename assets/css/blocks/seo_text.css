@@ -1,0 +1,24 @@
+/*--------------
+    SEO text
+--------------*/
+.seo_text
+{
+    .text_block
+    {
+        padding-inline: var(--outside_gap_s);
+    }
+}
+
+
+
+@media print,
+(max-width: 1279px)
+{
+    .seo_text
+    {
+        .text_block
+        {
+            padding-inline: 0;
+        }
+    }
+}

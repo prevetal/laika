@@ -1,0 +1,121 @@
+/*---------
+    FAQ
+---------*/
+.FAQ
+{
+    .block_head
+    {
+        padding-inline: var(--outside_gap_s);
+
+
+        .add_btn
+        {
+            display: flex;
+            align-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: var(--inner_gap_xxs);
+
+            height: 40px;
+            padding-inline: var(--inner_gap_s);
+
+            font-size: var(--font_size_xs);
+            font-weight: 500;
+
+            text-align: left;
+
+            color: #786a94;
+            border-radius: var(--border_radius_s);
+            background: rgba(166, 130, 245, .1);
+
+
+            .icon
+            {
+                display: block;
+
+                width: 6px;
+
+                color: var(--primary_strong_color);
+
+                aspect-ratio: 1 / 1;
+            }
+
+
+            br
+            {
+                display: none;
+            }
+        }
+    }
+
+
+    .accordion
+    {
+        width: 1200px;
+        max-width: 100%;
+        margin-inline: auto;
+    }
+}
+
+
+
+@media print,
+(max-width: 1279px)
+{
+    .FAQ
+    {
+        .block_head
+        {
+            padding-inline: 0;
+        }
+    }
+}
+
+
+
+@media print,
+(max-width: 1023px)
+{
+    .FAQ
+    {
+        .block_head
+        {
+            .title
+            {
+                width: calc(100% - 200px);
+            }
+        }
+    }
+}
+
+
+
+@media (max-width: 767px)
+{
+    .FAQ
+    {
+        .block_head
+        {
+            gap: 0;
+
+
+            .title
+            {
+                width: calc(100% - 115px);
+            }
+
+
+            .add_btn
+            {
+                align-self: flex-end;
+
+
+                br
+                {
+                    display: block;
+                }
+            }
+        }
+    }
+}

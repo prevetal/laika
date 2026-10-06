@@ -1,0 +1,244 @@
+/*-----------
+    Types
+-----------*/
+.types
+{
+    .row
+    {
+        display: flex;
+        align-content: flex-start;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        padding-inline: var(--outside_gap_s);
+
+
+        .block_head
+        {
+            gap: var(--inner_gap_l);
+
+            width: 388px;
+            max-width: 100%;
+            margin-bottom: 0;
+            padding-inline: 0;
+        }
+
+
+        .items
+        {
+            width: calc(100% - 388px - 70px);
+        }
+
+
+        .grid_row
+        {
+            padding-inline: 0;
+        }
+    }
+
+
+    .block_head
+    {
+        padding-inline: var(--outside_gap_s);
+
+
+        .desc
+        {
+            line-height: 2;
+        }
+    }
+
+
+    .grid_row
+    {
+        padding-inline: var(--outside_gap_s);
+
+        --items_per_line: 5;
+        --gap_x: var(--inner_gap_xs);
+        --gap_y: var(--inner_gap_xs);
+
+
+        &.big
+        {
+            --items_per_line: 4;
+            --gap_x: var(--inner_gap);
+            --gap_y: var(--inner_gap);
+        }
+
+
+        .row &
+        {
+            --items_per_line: 3;
+            --gap_x: var(--inner_gap_s);
+            --gap_y: var(--inner_gap_s);
+        }
+    }
+
+
+    .item
+    {
+        position: relative;
+
+        display: flex;
+        overflow: hidden;
+        flex-direction: column;
+        justify-content: flex-end;
+
+        min-height: 320px;
+        padding: var(--inner_gap_xs);
+
+        text-decoration: none;
+
+        color: currentColor;
+
+
+        .thumb
+        {
+            position: absolute;
+            z-index: 1;
+            inset: 0;
+
+            display: block;
+
+            border-radius: 25px;
+            background: var(--bg_grey);
+        }
+
+
+        .info
+        {
+            position: relative;
+            z-index: 3;
+
+            display: flex;
+            flex-direction: column;
+            gap: var(--inner_gap_xs);
+
+            padding: var(--inner_gap_xs);
+
+            border-radius: 15px;
+            background: var(--bg);
+        }
+
+
+        .name
+        {
+            font-family: var(--font_family_secondary);
+            font-size: 15px;
+            font-weight: 800;
+            line-height: 106.667%;
+        }
+    }
+}
+
+
+
+@media print,
+(max-width: 1279px)
+{
+    .types
+    {
+        .row
+        {
+            padding-inline: 0;
+
+
+            .block_head
+            {
+                gap: var(--inner_gap);
+
+                width: 340px;
+            }
+
+
+            .items
+            {
+                width: calc(100% - 340px - 40px);
+            }
+        }
+
+
+        .grid_row
+        {
+            padding-inline: 0;
+        }
+    }
+}
+
+
+
+@media print,
+(max-width: 1023px)
+{
+    .types
+    {
+        .row
+        {
+            .block_head
+            {
+                width: 100%;
+                margin-bottom: var(--block_head_offset);
+            }
+
+
+            .items
+            {
+                width: 100%;
+            }
+
+
+            .grid_row
+            {
+                padding-inline: var(--cont_padding);
+            }
+        }
+
+
+        .grid_row
+        {
+            display: grid;
+            overflow: auto;
+            gap: var(--inner_gap_s);
+
+            width: calc(100% + var(--cont_padding_double));
+            margin-block: calc(var(--block_padding) * -1);
+            margin-inline: calc(var(--cont_padding) * -1);
+            padding-block: var(--block_padding);
+            padding-inline: var(--cont_padding);
+
+            grid-auto-flow: column;
+            grid-auto-columns: max-content;
+            scroll-padding: 0 var(--cont_padding);
+            scroll-snap-type: x mandatory;
+            scrollbar-color: transparent transparent;
+            scrollbar-width: thin;
+
+
+            &::-webkit-scrollbar
+            {
+                display: none;
+
+                width: 0;
+                height: 0;
+
+                background-color: transparent;
+            }
+
+
+            &::-webkit-scrollbar-thumb
+            {
+                background-color: transparent;
+            }
+
+
+            & > *
+            {
+                width: 225px;
+                margin: 0;
+
+                scroll-snap-align: start;
+            }
+        }
+    }
+}

@@ -1,0 +1,242 @@
+/*-------------
+    Persons
+-------------*/
+.persons
+{
+    .swiper
+    {
+        overflow: visible;
+
+        padding-bottom: var(--block_padding);
+
+        --slidesPerView-0: auto;
+        --spaceBetween-0: var(--inner_gap_xs);
+        --slidesPerView-768: auto;
+        --spaceBetween-768: var(--inner_gap_xs);
+        --slidesPerView-1024: 4;
+        --spaceBetween-1024: var(--inner_gap);
+        --slidesPerView-1280: 5;
+        --spaceBetween-1280: var(--inner_gap);
+
+
+        &:not(.swiper-initialized)
+        {
+            .swiper-wrapper
+            {
+                gap: var(--spaceBetween-1280);
+            }
+
+
+            .swiper-slide
+            {
+                width: calc(100% / var(--slidesPerView-1280) - var(--spaceBetween-1280));
+            }
+        }
+    }
+
+
+    .swiper-button-next,
+    .swiper-button-prev
+    {
+        border-radius: var(--border_radius);
+        background: rgba(126, 88, 211, .05);
+        box-shadow: none;
+
+        --swiper-navigation-color: rgba(126, 88, 211, .3);
+
+
+        @media (hover: hover) and (pointer: fine)
+        {
+            &:hover
+            {
+                background: var(--primary_strong_color);
+
+                --swiper-navigation-color: var(--light_color);
+            }
+        }
+    }
+
+
+    .swiper-pagination
+    {
+        --swiper-pagination-bottom: 0;
+    }
+
+
+    .person
+    {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+
+        height: 304px;
+        padding: var(--inner_gap_xxs);
+        padding-top: 49px;
+
+
+        .photo
+        {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+
+            width: 100%;
+            height: calc(100% - 49px);
+
+            border-radius: var(--border_radius_l);
+            background: rgba(126, 88, 211, .1);
+
+
+            img
+            {
+                position: absolute;
+                bottom: var(--block_padding_s);
+                left: 50%;
+
+                display: block;
+
+                max-width: calc(100% - var(--inner_gap) * 2);
+                max-height: calc(100% + var(--inner_gap));
+
+                transform: translateX(-50%);
+            }
+        }
+
+
+        .info
+        {
+            position: relative;
+            z-index: 3;
+
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+
+            padding-block: var(--inner_gap_s);
+            padding-inline: var(--inner_gap);
+
+            border-radius: 35px;
+            background: var(--bg);
+
+
+            .name
+            {
+                font-family: var(--font_family_secondary);
+                font-weight: 800;
+                line-height: 131.25%;
+            }
+
+
+            .post
+            {
+                font-size: var(--font_size_xs);
+                line-height: 150%;
+            }
+        }
+    }
+}
+
+
+
+@media print,
+(max-width: 1279px)
+{
+    .persons
+    {
+        .swiper
+        {
+            &:not(.swiper-initialized)
+            {
+                .swiper-wrapper
+                {
+                    gap: var(--spaceBetween-1024);
+                }
+
+
+                .swiper-slide
+                {
+                    width: calc(100% / var(--slidesPerView-1024) - var(--spaceBetween-1024));
+                }
+            }
+        }
+
+
+        .person
+        {
+            height: 284px;
+            padding-top: 40px;
+
+
+            .photo
+            {
+                height: calc(100% - 40px);
+            }
+
+
+            .info
+            {
+                border-radius: var(--border_radius_l);
+            }
+        }
+    }
+}
+
+
+
+@media print,
+(max-width: 1023px)
+{
+    .persons
+    {
+        .swiper
+        {
+            &:not(.swiper-initialized)
+            {
+                .swiper-wrapper
+                {
+                    gap: var(--spaceBetween-768);
+                }
+
+
+                .swiper-slide
+                {
+                    width: 190px;
+                }
+            }
+
+
+            .swiper-slide
+            {
+                width: 190px;
+            }
+        }
+
+
+        .person
+        {
+            height: 230px;
+            padding-top: 30px;
+
+
+            .photo
+            {
+                height: calc(100% - 30px);
+            }
+
+
+            .info
+            {
+                gap: 0;
+
+                padding-block: var(--inner_gap_xs);
+                padding-inline: var(--inner_gap_s);
+
+
+                .post
+                {
+                    font-size: var(--font_size_xxs);
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,193 @@
+/*----------------
+    Order form
+----------------*/
+.order_form
+{
+    &:not(.block)
+    {
+        margin-bottom: 55px;
+    }
+
+
+    .data
+    {
+        position: relative;
+
+        display: flex;
+        overflow: hidden;
+        align-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+
+        padding: var(--inner_gap_xs);
+
+        border-radius: var(--border_radius_xl);
+        background: var(--bg_primary_soft);
+
+
+        .form
+        {
+            position: relative;
+            z-index: 3;
+
+            display: flex;
+            align-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            column-gap: var(--inner_gap_s);
+            row-gap: var(--inner_gap_s);
+
+            width: 680px;
+            max-width: 100%;
+            min-height: 340px;
+            padding-block: var(--block_padding);
+            padding-inline: 72px;
+
+            border-radius: var(--border_radius_xl);
+            background: var(--bg);
+
+
+            .title
+            {
+                font-family: var(--font_family_secondary);
+                font-size: var(--font_size_title);
+                font-weight: 800;
+                line-height: 1;
+
+                color: #2a2a2a;
+            }
+
+
+            .desc
+            {
+                font-size: var(--font_size_s);
+                font-weight: 600;
+                line-height: 157.143%;
+
+                color: var(--primary_strong_color);
+            }
+
+
+            .line
+            {
+                width: 230px;
+                max-width: 100%;
+                margin-top: var(--inner_gap_xxs);
+                margin-bottom: 0;
+
+
+                &.agree
+                {
+                    width: 100%;
+                    margin-top: var(--inner_gap_s);
+                }
+            }
+
+
+            .submit
+            {
+                margin-top: var(--inner_gap_xxs);
+            }
+        }
+
+
+        .image
+        {
+            position: absolute;
+            z-index: 1;
+            inset: 0;
+
+            display: block;
+
+            pointer-events: none;
+        }
+    }
+}
+
+
+
+@media print,
+(max-width: 1439px)
+{
+    .order_form
+    {
+        .data
+        {
+            .form
+            {
+                width: 636px;
+                padding-inline: var(--outside_gap_s);
+            }
+        }
+    }
+}
+
+
+
+@media print,
+(max-width: 1279px)
+{
+    .order_form
+    {
+        .data
+        {
+            .form
+            {
+                width: 596px;
+                min-height: 300px;
+                padding-inline: var(--block_padding_l);
+            }
+        }
+    }
+}
+
+
+
+@media print,
+(max-width: 1023px)
+{
+    .order_form
+    {
+        .data
+        {
+            padding-top: 250px;
+
+
+            .form
+            {
+                width: 100%;
+                min-height: 0;
+                padding: var(--inner_gap_l);
+            }
+        }
+    }
+}
+
+
+
+@media (max-width: 767px)
+{
+    .order_form
+    {
+        .data
+        {
+            .form
+            {
+                .line
+                {
+                    width: 100%;
+                }
+
+
+                .submit,
+                .submit_btn
+                {
+                    width: 100%;
+                    margin-top: 0;
+                }
+            }
+        }
+    }
+}
