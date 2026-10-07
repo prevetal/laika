@@ -1,0 +1,272 @@
+/*-------------------
+    Photo gallery
+-------------------*/
+.photo_gallery
+{
+    position: relative;
+
+
+    .swiper
+    {
+        overflow: visible;
+
+        --spaceBetween: var(--inner_gap);
+        --slidesPerView: auto;
+
+
+        .swiper-slide
+        {
+            display: grid;
+            --gap: var(--inner_gap);
+            gap: var(--gap);
+
+            width: 1466px;
+
+            --row: 160px;
+            grid-template-columns: 95fr 50fr 97fr 40fr 83fr 41fr 46fr 210fr;
+            grid-template-rows: repeat(5, var(--row));
+            grid-template-areas: 'a a a b b c c d'
+            'a a a e e e f f'
+            'g g h e e e f f'
+            'i j j j k k f f'
+            'l j j j m m n n';
+        }
+    }
+
+
+    .item
+    {
+        display: block;
+
+        text-decoration: none;
+
+        color: currentColor;
+
+
+        &:nth-child(1)
+        {
+            grid-area: a;
+        }
+
+        &:nth-child(2)
+        {
+            grid-area: b;
+        }
+
+        &:nth-child(3)
+        {
+            grid-area: c;
+        }
+
+        &:nth-child(4)
+        {
+            grid-area: d;
+        }
+
+        &:nth-child(5)
+        {
+            grid-area: e;
+        }
+
+        &:nth-child(6)
+        {
+            grid-area: f;
+        }
+
+        &:nth-child(7)
+        {
+            grid-area: g;
+        }
+
+        &:nth-child(8)
+        {
+            grid-area: h;
+        }
+
+        &:nth-child(9)
+        {
+            grid-area: i;
+        }
+
+        &:nth-child(10)
+        {
+            grid-area: j;
+        }
+
+        &:nth-child(11)
+        {
+            grid-area: k;
+        }
+
+        &:nth-child(12)
+        {
+            grid-area: l;
+        }
+
+        &:nth-child(13)
+        {
+            grid-area: m;
+        }
+
+        &:nth-child(14)
+        {
+            grid-area: n;
+        }
+
+
+        .thumb
+        {
+            display: block;
+
+            width: 100%;
+            height: 100%;
+
+            border-radius: 30px;
+            background: var(--bg_grey);
+        }
+    }
+
+
+    .all_link
+    {
+        position: absolute;
+        right: var(--outside_gap);
+        bottom: 100%;
+
+        display: flex;
+        align-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: var(--inner_gap_xxs);
+
+        height: 40px;
+        margin-bottom: var(--block_padding);
+        padding-inline: var(--inner_gap_s);
+
+        font-size: var(--font_size_xs);
+        font-weight: 500;
+
+        text-decoration: none;
+
+        color: var(--light_color);
+        border-radius: var(--border_radius_s);
+        background: var(--primary_color);
+
+
+        .icon
+        {
+            display: block;
+
+            width: 4px;
+            height: 6px;
+
+            transform: translateY(1px);
+
+            color: #d3beff;
+        }
+    }
+}
+
+
+
+@media print,
+(max-width: 1439px)
+{
+    .photo_gallery
+    {
+        .swiper
+        {
+            --spaceBetween: var(--inner_gap_xs);
+
+
+            .swiper-slide
+            {
+                --gap: var(--inner_gap_xs);
+
+                width: 100vw;
+
+                --row: 11vw;
+            }
+        }
+    }
+}
+
+
+
+@media print,
+(max-width: 1279px)
+{
+    .photo_gallery
+    {
+        .all_link
+        {
+            right: 0;
+
+            margin-bottom: var(--block_padding_s);
+        }
+
+
+        .swiper-button-next,
+        .swiper-button-prev
+        {
+            --swiper-navigation-sides-offset: calc(var(--cont_padding) * -1);
+        }
+    }
+}
+
+
+
+@media print,
+(max-width: 1023px)
+{
+    .photo_gallery
+    {
+        .item
+        {
+            .thumb
+            {
+                border-radius: var(--border_radius);
+            }
+        }
+
+
+        .all_link
+        {
+            position: relative;
+            bottom: 0;
+
+            width: fit-content;
+            margin-inline: auto;
+            margin-top: var(--inner_gap_l);
+            margin-bottom: 0;
+        }
+    }
+}
+
+
+
+@media (max-width: 767px)
+{
+    .photo_gallery
+    {
+        .swiper
+        {
+            .swiper-slide
+            {
+                width: 200vw;
+
+                --row: 22vw;
+            }
+        }
+
+
+        .item
+        {
+            .thumb
+            {
+                border-radius: var(--border_radius);
+            }
+        }
+    }
+}
