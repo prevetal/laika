@@ -59,10 +59,12 @@
             justify-content: center;
             gap: var(--inner_gap_xxs);
 
+            padding-inline: var(--inner_gap_xs);
+
 
             span
             {
-                max-width: calc(1000% - 4px - var(--inner_gap_xxs));
+                max-width: calc(100% - 4px - var(--inner_gap_xxs));
             }
 
 
@@ -144,7 +146,28 @@
         }
 
 
-        .grid_row
+        .grid_row:not(.inline)
+        {
+            --gap_x: var(--inner_gap_xxs);
+            --gap_y: var(--inner_gap_xxs);
+            --items_per_line: 2;
+
+
+            .item
+            {
+                padding-block: var(--inner_gap_xxs) var(--inner_gap_xs);
+                padding-inline: var(--inner_gap_xxs);
+
+
+                .thumb
+                {
+                    height: 85px;
+                }
+            }
+        }
+
+
+        .grid_row.inline
         {
             display: grid;
             overflow: auto;

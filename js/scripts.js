@@ -132,6 +132,28 @@ document.addEventListener('DOMContentLoaded', function() {
 	})
 
 
+	// Custom select - Nice select
+	const selects = document.querySelectorAll('select:not(.skip)'),
+		selectsInstances = []
+
+	if (selects) {
+		selects.forEach(el => {
+			const inst = NiceSelect.bind(el, {
+				placeholder: el.getAttribute('data-placeholder')
+			})
+
+			el._niceSelect = inst
+			selectsInstances.push(inst)
+
+			el.addEventListener('change', () => el.classList.add('selected'))
+
+			if (el.querySelector('option[selected]')) {
+				el.classList.add('selected')
+			}
+		})
+	}
+
+
 	// Popovers
 	document.querySelectorAll('[popover]').forEach(el => {
 		el.addEventListener('toggle', e => {

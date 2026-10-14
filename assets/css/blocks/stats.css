@@ -127,7 +127,33 @@
     {
         .item
         {
-            width: 50%;
+            position: relative;
+
+            width: calc(50% - 12px);
+            padding-bottom: var(--block_padding_s);
+
+            border-bottom: 1px solid rgba(126, 88, 211, .1);
+
+
+            &:nth-child(4n+3)
+            {
+                &:before
+                {
+                    position: absolute;
+                    top: 0;
+                    left: -13px;
+
+                    display: block;
+
+                    width: 1px;
+                    height: calc(100% - 20px);
+
+                    content: '';
+                    pointer-events: none;
+
+                    background: rgba(126, 88, 211, .1);
+                }
+            }
 
 
             .val

@@ -6,6 +6,12 @@
     position: relative;
 
 
+    .block_head.mob
+    {
+        display: none;
+    }
+
+
     .swiper
     {
         overflow: visible;
@@ -250,6 +256,12 @@
 {
     .photo_gallery
     {
+        .block_head.mob
+        {
+            display: flex;
+        }
+
+
         .swiper
         {
             .swiper-slide

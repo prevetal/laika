@@ -329,10 +329,16 @@
     {
         .block_head
         {
-            .title,
-            .desc
+            .title
             {
                 width: 100%;
+            }
+
+
+            .desc
+            {
+                width: calc(100% - 70px);
+                margin-left: 0;
             }
         }
 

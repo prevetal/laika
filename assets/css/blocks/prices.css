@@ -19,6 +19,27 @@
 
         border-radius: var(--border_radius_l);
         background: var(--bg_primary_soft);
+
+        --custom_scroll_width: 8px;
+        --custom_scroll_height: 8px;
+        --custom_scroll_border_radius: 8px;
+
+
+        &::-webkit-scrollbar
+        {
+            width: var(--custom_scroll_width);
+            height: var(--custom_scroll_height);
+
+            border-radius: var(--custom_scroll_border_radius);
+            background-color: var(--bg);
+        }
+
+
+        &::-webkit-scrollbar-thumb
+        {
+            border-radius: var(--custom_scroll_border_radius);
+            background-color: var(--custom_scroll_scrollbar_thumb_color);
+        }
     }
 
 
@@ -139,5 +160,35 @@
     .advantages
     {
         margin-top: var(--inner_gap_s);
+    }
+}
+
+
+
+@media print,
+(max-width: 1279px)
+{
+    .prices
+    {
+        .block_head
+        {
+            padding-inline: 0;
+        }
+    }
+}
+
+
+
+@media (max-width: 767px)
+{
+    .prices
+    {
+        .block_head
+        {
+            .title
+            {
+                width: calc(100% - 70px);
+            }
+        }
     }
 }

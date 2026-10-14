@@ -8,6 +8,12 @@
     padding-bottom: var(--block_padding_s);
 
 
+    .block_head.mob
+    {
+        display: none;
+    }
+
+
     .swiper
     {
         overflow: visible;
@@ -324,6 +330,19 @@
             margin-inline: auto;
             margin-top: var(--outside_gap_s);
             margin-bottom: 0;
+        }
+    }
+}
+
+
+
+@media (max-width: 767px)
+{
+    .projects
+    {
+        .block_head.mob
+        {
+            display: flex;
         }
     }
 }

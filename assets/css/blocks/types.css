@@ -113,7 +113,7 @@
 
             display: flex;
             flex-direction: column;
-            gap: var(--inner_gap_xs);
+            gap: var(--inner_gap_xxs);
 
             padding: var(--inner_gap_xs);
 
@@ -128,6 +128,13 @@
             font-size: 15px;
             font-weight: 800;
             line-height: 106.667%;
+        }
+
+
+        .desc
+        {
+            font-size: 9px;
+            line-height: 166.667%;
         }
     }
 }

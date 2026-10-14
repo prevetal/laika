@@ -102,13 +102,16 @@
 
             .title
             {
-                width: calc(100% - 115px);
+                width: calc(100% - 120px);
             }
 
 
             .add_btn
             {
                 align-self: flex-end;
+                gap: var(--inner_gap_xs);
+
+                height: 50px;
 
 
                 br
