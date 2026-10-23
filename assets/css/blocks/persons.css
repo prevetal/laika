@@ -83,7 +83,7 @@
             width: 100%;
             height: calc(100% - 49px);
 
-            border-radius: var(--border_radius_l);
+            border-radius: var(--border_radius_xl);
             background: rgba(126, 88, 211, .1);
 
 
@@ -175,7 +175,7 @@
 
             .info
             {
-                border-radius: var(--border_radius_l);
+                border-radius: var(--border_radius_xl);
             }
         }
     }

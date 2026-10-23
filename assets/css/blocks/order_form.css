@@ -22,7 +22,7 @@
 
         padding: var(--inner_gap_xs);
 
-        border-radius: var(--border_radius_xl);
+        border-radius: var(--border_radius_xxl);
         background: var(--bg_primary_soft);
 
 
@@ -45,7 +45,7 @@
             padding-block: var(--block_padding);
             padding-inline: 72px;
 
-            border-radius: var(--border_radius_xl);
+            border-radius: var(--border_radius_xxl);
             background: var(--bg);
 
 
@@ -133,11 +133,16 @@
     {
         .data
         {
+            border-radius: var(--border_radius_xl);
+
+
             .form
             {
                 width: 596px;
                 min-height: 300px;
                 padding-inline: var(--block_padding_l);
+
+                border-radius: var(--border_radius_xl);
             }
         }
     }
@@ -154,12 +159,16 @@
         {
             padding-top: 250px;
 
+            border-radius: var(--border_radius_l);
+
 
             .form
             {
                 width: 100%;
                 min-height: 0;
                 padding: var(--inner_gap_l);
+
+                border-radius: var(--border_radius_l);
             }
         }
     }

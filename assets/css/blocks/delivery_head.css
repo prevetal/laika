@@ -1,0 +1,222 @@
+/*-------------------
+    Delivery head
+-------------------*/
+.delivery_head
+{
+    .data
+    {
+        position: relative;
+
+        overflow: hidden;
+
+        padding: var(--inner_gap);
+
+        border-radius: var(--border_radius_xxl);
+        background: var(--bg_primary_soft);
+
+
+        .image
+        {
+            position: absolute;
+            z-index: 1;
+            inset: 0;
+
+            display: block;
+
+            pointer-events: none;
+        }
+    }
+
+
+    .info
+    {
+        position: relative;
+        z-index: 3;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: var(--inner_gap);
+
+        width: 650px;
+        max-width: 100%;
+        min-height: 350px;
+        padding-block: var(--block_padding_s);
+        padding-inline: var(--block_padding);
+
+        border-radius: var(--border_radius_xl);
+        background: var(--bg);
+
+
+        .title
+        {
+            font-family: var(--font_family_secondary);
+            font-size: var(--font_size_title_xl);
+            font-weight: 800;
+            line-height: 1;
+        }
+
+
+        .desc
+        {
+            display: flex;
+            flex-direction: column;
+            gap: var(--inner_gap_xs);
+
+            font-size: var(--font_size_s);
+            line-height: 171.429%;
+        }
+
+
+        .features
+        {
+            display: flex;
+            align-content: flex-start;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            gap: var(--inner_gap_xs);
+
+            margin-top: var(--inner_gap_xxs);
+
+            font-size: 13px;
+            font-weight: 500;
+            line-height: 123.077%;
+
+
+            & > *
+            {
+                display: flex;
+                align-content: flex-start;
+                align-items: flex-start;
+                flex-wrap: wrap;
+                justify-content: flex-start;
+                gap: 8px;
+
+                padding-block: var(--inner_gap_xs);
+                padding-inline: 12px 16px;
+
+                border-radius: var(--border_radius_s);
+                background: rgba(166, 130, 245, .1);
+            }
+
+
+            .icon
+            {
+                display: flex;
+                align-content: center;
+                align-items: center;
+                flex-wrap: wrap;
+                justify-content: center;
+
+                width: 18px;
+
+                color: #494d2c;
+                border-radius: 50%;
+                background: var(--secondary_color);
+
+                aspect-ratio: 1 / 1;
+
+
+                svg
+                {
+                    display: block;
+
+                    width: 10px;
+                    height: 8px;
+                }
+
+
+                & + span
+                {
+                    align-self: center;
+
+                    max-width: calc(100% - 26px);
+                }
+            }
+        }
+    }
+}
+
+
+
+@media print,
+(max-width: 1279px)
+{
+    .delivery_head
+    {
+        .data
+        {
+            border-radius: var(--border_radius_xl);
+        }
+
+
+        .info
+        {
+            width: 600px;
+            min-height: 0;
+            padding-block: var(--inner_gap_l);
+            padding-inline: var(--block_padding_s);
+
+            border-radius: var(--border_radius_l);
+        }
+    }
+}
+
+
+
+@media print,
+(max-width: 1023px)
+{
+    .delivery_head
+    {
+        .info
+        {
+            width: 500px;
+            padding-block: var(--inner_gap);
+            padding-inline: var(--inner_gap_l);
+        }
+    }
+}
+
+
+
+@media (max-width: 767px)
+{
+    .delivery_head
+    {
+        .data
+        {
+            padding-block: 240px var(--inner_gap_xs);
+            padding-inline: var(--inner_gap_xs);
+        }
+
+
+        .info
+        {
+            gap: var(--inner_gap_s);
+
+            width: 100%;
+            padding-block: var(--inner_gap_l);
+            padding-inline: var(--inner_gap);
+
+
+            .title
+            {
+                font-size: var(--font_size_title_l);
+            }
+
+
+            .desc
+            {
+                font-size: 13px;
+            }
+
+
+            .features
+            {
+                font-size: var(--font_size_xs);
+            }
+        }
+    }
+}

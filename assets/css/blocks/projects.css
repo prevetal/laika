@@ -14,6 +14,12 @@
     }
 
 
+    .data
+    {
+        position: relative;
+    }
+
+
     .swiper
     {
         overflow: visible;
@@ -28,6 +34,23 @@
         --spaceBetween-1024: var(--inner_gap_xs);
         --slidesPerView-1280: 4;
         --spaceBetween-1280: var(--inner_gap_xs);
+
+
+        &.big
+        {
+            padding-inline: 0;
+
+            --slidesPerView-1024: 3;
+            --spaceBetween-1024: var(--inner_gap);
+            --slidesPerView-1280: 3;
+            --spaceBetween-1280: var(--block_padding_s);
+
+
+            .swiper-pagination
+            {
+                display: none;
+            }
+        }
 
 
         &:not(.swiper-initialized)
@@ -68,14 +91,13 @@
         flex-direction: column;
         justify-content: flex-end;
 
+        height: 450px;
         padding: var(--inner_gap_xs);
 
         text-decoration: none;
 
         color: currentColor;
-        border-radius: var(--border_radius_l);
-
-        aspect-ratio: 1 / 1.5;
+        border-radius: var(--border_radius_xl);
 
 
         .thumb
@@ -102,7 +124,7 @@
             min-height: 167px;
             padding: var(--inner_gap);
 
-            border-radius: 30px;
+            border-radius: var(--border_radius_l);
             background: var(--bg);
         }
 
@@ -156,7 +178,7 @@
             text-decoration: none;
 
             color: var(--light_color);
-            border-radius: 30px;
+            border-radius: var(--border_radius_l);
             background: var(--primary_strong_color);
 
 
@@ -265,6 +287,9 @@
 
         .project
         {
+            border-radius: var(--border_radius_l);
+
+
             .info
             {
                 min-height: 168px;
@@ -328,7 +353,7 @@
 
             width: fit-content;
             margin-inline: auto;
-            margin-top: var(--outside_gap_s);
+            margin-top: var(--block_padding_l);
             margin-bottom: 0;
         }
     }
@@ -343,6 +368,12 @@
         .block_head.mob
         {
             display: flex;
+        }
+
+
+        .all_link
+        {
+            margin-top: var(--block_padding);
         }
     }
 }

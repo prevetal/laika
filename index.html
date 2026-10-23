@@ -1619,7 +1619,7 @@
 						</div>
 
 						<div class="grid_row">
-							<div class="item">
+							<div class="step">
 								<div class="number"></div>
 
 								<div class="name">Выберите<br> продукцию</div>
@@ -1631,7 +1631,7 @@
 								</picture>
 							</div>
 
-							<div class="item">
+							<div class="step">
 								<div class="number"></div>
 
 								<div class="name">Оставьте<br> заявку</div>
@@ -1643,7 +1643,7 @@
 								</picture>
 							</div>
 
-							<div class="item">
+							<div class="step">
 								<div class="number"></div>
 
 								<div class="name">Передайте<br> макет</div>
@@ -1655,7 +1655,7 @@
 								</picture>
 							</div>
 
-							<div class="item">
+							<div class="step">
 								<div class="number"></div>
 
 								<div class="name">Получите<br> заказ</div>
@@ -2437,7 +2437,7 @@
 
 				<section class="FAQ block">
 					<div class="cont">
-						<div class="block_head row">
+						<div class="block_head pad row">
 							<div class="title">Ответы на часто задаваемые вопросы</div>
 
 							<button class="add_btn">
@@ -2756,6 +2756,80 @@
 							</button>
 						</div>
 					</form>
+				</div>
+			</div>
+		</dialog>
+
+
+		<dialog class="modal" id="feedback_modal">
+			<div class="wrapper">
+				<div class="inner">
+					<button class="close_btn" data-close-modal>
+						<svg class="icon"><use xlink:href="images/sprite.svg#ic_close"></use></svg>
+					</button>
+
+					<div class="modal_title">Задать<br> вопрос</div>
+
+					<div class="modal_desc">
+						<p>Оставьте свои контактные данные, и мы свяжемся с вами в ближайшее время</p>
+					</div>
+
+					<form action="" class="form">
+						<div class="line">
+							<div class="field">
+								<textarea name="" placeholder="Ваш вопрос"></textarea>
+							</div>
+						</div>
+
+						<div class="line">
+							<div class="field">
+								<input type="tel" name="" value="" class="input" placeholder="Ваш номер телефона">
+							</div>
+						</div>
+
+						<div class="line agree">
+							<div class="field">
+								<label class="checkbox">
+									<input type="checkbox" name="agree">
+
+									<span class="check"></span>
+
+									<span>Я согласен с политикой <a href="/" target="_blank">обработки персональных данных</a></span>
+								</label>
+							</div>
+						</div>
+
+						<div class="submit">
+							<button type="submit" class="submit_btn">
+								<span>Отправить заявку</span>
+
+								<span class="icon">
+									<svg><use xlink:href="images/sprite.svg#ic_arr_hor"></use></svg>
+								</span>
+							</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</dialog>
+
+
+		<dialog class="modal success" id="success_modal">
+			<div class="wrapper">
+				<div class="inner">
+					<button class="close_btn" data-close-modal>
+						<svg class="icon"><use xlink:href="images/sprite.svg#ic_close"></use></svg>
+					</button>
+
+					<picture class="thumb">
+						<img src="images/ic_modal_success.png" alt="" loading="lazy">
+					</picture>
+
+					<div class="modal_title">Спасибо<br> за заявку</div>
+
+					<div class="modal_desc">
+						<p>Мы скоро с вами свяжемся!</p>
+					</div>
 				</div>
 			</div>
 		</dialog>

@@ -11,7 +11,7 @@
 
         padding: var(--block_padding_l);
 
-        border-radius: var(--border_radius_l);
+        border-radius: var(--border_radius_xl);
         background: var(--bg_primary_soft);
     }
 
@@ -29,7 +29,7 @@
         max-width: 100%;
         padding: var(--block_padding_s);
 
-        border-radius: var(--border_radius_l);
+        border-radius: var(--border_radius_xl);
         background: var(--bg);
 
 

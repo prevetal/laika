@@ -1,0 +1,390 @@
+/*-----------------------------
+    Courier delivery prices
+-----------------------------*/
+.courier_delivery_prices
+{
+    .data
+    {
+        position: relative;
+
+        width: 1400px;
+        max-width: 100%;
+        margin-inline: auto;
+        padding-block: var(--block_padding_l) var(--outside_gap_s);
+
+        border-radius: var(--border_radius_xxl);
+        background: #f8f6fd;
+
+
+        .block_head
+        {
+            padding-right: 268px;
+        }
+
+
+        .image
+        {
+            position: absolute;
+            z-index: 3;
+            top: -71px;
+            right: 45px;
+
+            width: 299px;
+            max-width: 100%;
+
+            pointer-events: none;
+
+
+            img
+            {
+                display: block;
+
+                width: 100%;
+            }
+        }
+
+
+        .grid_row
+        {
+            --items_per_line: 2;
+            --gap_x: var(--block_padding_s);
+            --gap_y: var(--block_padding_s);
+        }
+
+
+        .info
+        {
+            padding: var(--inner_gap_xs);
+
+            border-radius: var(--border_radius_xl);
+            background: var(--bg);
+        }
+
+
+        table
+        {
+            width: 100%;
+
+            border-spacing: 0;
+            border-collapse: collapse;
+
+
+            th
+            {
+                height: 50px;
+                padding-block: var(--inner_gap_xs);
+                padding-inline: var(--block_padding_s);
+
+                font-size: var(--font_size_s);
+                font-weight: 600;
+                line-height: 157.143%;
+
+                text-align: center;
+                vertical-align: middle;
+
+                color: var(--light_color);
+                background: var(--primary_strong_color);
+
+
+                &:first-child
+                {
+                    border-top-left-radius: var(--border_radius_l);
+                    border-bottom-left-radius: var(--border_radius_l);
+                }
+
+
+                &:last-child
+                {
+                    border-top-right-radius: var(--border_radius_l);
+                    border-bottom-right-radius: var(--border_radius_l);
+                }
+            }
+
+
+            th + th
+            {
+                border-left: 1px solid #754fca;
+            }
+
+
+            td
+            {
+                height: 50px;
+                padding-block: var(--inner_gap_xs);
+                padding-inline: var(--block_padding_s);
+
+                font-size: var(--font_size_s);
+                font-weight: 500;
+                line-height: 135.714%;
+
+                text-align: center;
+                vertical-align: middle;
+
+
+                &:first-child
+                {
+                    border-top-left-radius: var(--border_radius_l);
+                    border-bottom-left-radius: var(--border_radius_l);
+                }
+
+
+                &:last-child
+                {
+                    border-top-right-radius: var(--border_radius_l);
+                    border-bottom-right-radius: var(--border_radius_l);
+                }
+
+
+                &.price
+                {
+                    font-weight: 700;
+
+                    white-space: nowrap;
+
+                    color: var(--primary_strong_color);
+                }
+
+
+                span
+                {
+                    position: relative;
+
+                    padding-left: 16px;
+
+
+                    &:before
+                    {
+                        position: absolute;
+                        top: .5lh;
+                        left: 0;
+
+                        display: block;
+
+                        width: 8px;
+
+                        content: '';
+                        transform: translateY(-50%);
+
+                        border-radius: 50%;
+
+                        aspect-ratio: 1 / 1;
+                    }
+
+
+                    &.color1
+                    {
+                        &:before
+                        {
+                            background: var(--primary_strong_color);
+                        }
+                    }
+
+
+                    &.color2
+                    {
+                        &:before
+                        {
+                            background: var(--primary_color);
+                        }
+                    }
+
+
+                    &.color3
+                    {
+                        &:before
+                        {
+                            background: #c9b5f7;
+                        }
+                    }
+
+
+                    &.color4
+                    {
+                        &:before
+                        {
+                            background: #e4dcf7;
+                        }
+                    }
+                }
+            }
+
+
+            tr:nth-child(2n)
+            {
+                td
+                {
+                    background: var(--bg_primary_soft);
+                }
+            }
+
+
+            td + td
+            {
+                border-left: 1px solid #ebe8f1;
+            }
+        }
+
+
+        .map
+        {
+            position: relative;
+
+            overflow: hidden;
+
+            border-radius: var(--border_radius_xl);
+            background: var(--bg);
+        }
+    }
+}
+
+
+
+@media print,
+(max-width: 1279px)
+{
+    .courier_delivery_prices
+    {
+        .data
+        {
+            border-radius: var(--border_radius_xl);
+
+
+            .block_head
+            {
+                padding-right: 168px;
+            }
+
+
+            .grid_row
+            {
+                --gap_x: var(--inner_gap);
+                --gap_y: var(--inner_gap);
+            }
+
+
+            .image
+            {
+                top: -60px;
+                right: 0;
+
+                width: 200px;
+            }
+
+
+            .info
+            {
+                border-radius: var(--border_radius_l);
+            }
+
+
+            table
+            {
+                th
+                {
+                    height: 48px;
+                    padding-inline: var(--inner_gap);
+                }
+
+
+                td
+                {
+                    height: 48px;
+                    padding-inline: var(--inner_gap);
+
+                    font-size: 13px;
+                }
+            }
+
+
+            .map
+            {
+                border-radius: var(--border_radius_l);
+            }
+        }
+    }
+}
+
+
+
+@media print,
+(max-width: 1023px)
+{
+    .courier_delivery_prices
+    {
+        .data
+        {
+            padding-block: var(--block_padding_l);
+
+            border-radius: var(--border_radius_l);
+
+
+            .grid_row
+            {
+                --items_per_line: 1;
+                --gap_x: var(--inner_gap_xs);
+                --gap_y: var(--inner_gap_xs);
+            }
+
+
+            .info
+            {
+                border-radius: var(--border_radius);
+            }
+
+
+            .map
+            {
+                height: 255px;
+
+                border-radius: var(--border_radius);
+            }
+        }
+    }
+}
+
+
+
+@media (max-width: 767px)
+{
+    .courier_delivery_prices
+    {
+        .data
+        {
+            .block_head
+            {
+                padding-right: 0;
+            }
+
+
+            .image
+            {
+                width: 110px;
+            }
+
+
+            table
+            {
+                th
+                {
+                    height: 44px;
+                    padding-inline: var(--inner_gap_xs);
+                }
+
+
+                td
+                {
+                    height: 44px;
+                    padding-inline: var(--inner_gap_xs);
+
+                    font-size: var(--font_size_xs);
+
+
+                    &.price
+                    {
+                        white-space: wrap;
+                    }
+                }
+            }
+        }
+    }
+}

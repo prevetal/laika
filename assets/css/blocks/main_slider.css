@@ -22,7 +22,7 @@
 
             padding: var(--inner_gap);
 
-            border-radius: var(--border_radius_xl);
+            border-radius: var(--border_radius_xxl);
             background: var(--primary_color);
         }
     }
@@ -44,14 +44,14 @@
         padding-block: var(--block_padding_s) 45px;
         padding-inline: 45px;
 
-        border-radius: var(--border_radius_l);
+        border-radius: var(--border_radius_xl);
         background: var(--bg);
 
 
         .title
         {
             font-family: var(--font_family_secondary);
-            font-size: var(--font_size_title_l);
+            font-size: var(--font_size_title_xl);
             font-weight: 800;
             line-height: 1;
         }
@@ -108,7 +108,7 @@
                 transform: rotate(5.673deg);
                 pointer-events: none;
 
-                background: url(../images/main_slider_btn_arrow.svg) 0 0 no-repeat;
+                background: url(../../../images/main_slider_btn_arrow.svg) 0 0 no-repeat;
             }
 
 

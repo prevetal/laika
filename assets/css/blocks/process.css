@@ -13,7 +13,7 @@
         padding-inline: var(--outside_gap_s);
 
         color: var(--light_color);
-        border-radius: var(--border_radius_xl);
+        border-radius: var(--border_radius_xxl);
         background: var(--bg_dark);
     }
 

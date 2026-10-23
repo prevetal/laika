@@ -1,0 +1,326 @@
+/*----------
+    Blog
+----------*/
+.blog
+{
+    .grid_row
+    {
+        --gap_x: var(--block_padding_s);
+        --gap_y: var(--block_padding_s);
+    }
+
+
+    .article
+    {
+        display: flex;
+        flex-direction: column;
+
+        padding: var(--inner_gap_xs);
+
+        border-radius: var(--border_radius_xl);
+        background: var(--light_color);
+        box-shadow: 0 5px 40px 0 rgba(0, 0, 0, .05);
+
+
+        .image
+        {
+            display: block;
+
+            text-decoration: none;
+
+            color: currentColor;
+        }
+
+
+        .thumb
+        {
+            display: block;
+
+            border-radius: var(--border_radius_l);
+            background: var(--bg_grey);
+
+            aspect-ratio: 1 / .513;
+        }
+
+
+        .info
+        {
+            display: flex;
+            flex: 1 0 auto;
+            flex-direction: column;
+            gap: var(--inner_gap_xs);
+
+            padding-block: var(--inner_gap_l) var(--inner_gap_xs);
+            padding-inline: var(--inner_gap_xs);
+        }
+
+
+        .name
+        {
+            padding-inline: var(--inner_gap);
+
+            font-family: var(--font_family_secondary);
+            font-size: var(--font_size_l);
+            font-weight: 800;
+            line-height: 122.222%;
+
+
+            a
+            {
+                display: inline-block;
+
+                transition: color .2s linear;
+                vertical-align: top;
+                text-decoration: none;
+
+                color: currentColor;
+
+
+                @media (hover: hover) and (pointer: fine)
+                {
+                    &:hover
+                    {
+                        color: var(--primary_strong_color);
+                    }
+                }
+            }
+        }
+
+
+        .desc
+        {
+            display: flex;
+            flex-direction: column;
+
+            margin-bottom: auto;
+            padding-inline: var(--inner_gap);
+
+            font-size: 13px;
+            line-height: 169.231%;
+        }
+
+
+        .bottom
+        {
+            display: flex;
+            align-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            gap: var(--inner_gap_s);
+
+            margin-top: var(--inner_gap_s);
+            padding-inline: var(--inner_gap) 0;
+
+            font-size: var(--font_size_xxs);
+            font-weight: 500;
+
+            color: #726c7e;
+            border-radius: 50px;
+            background: var(--bg_grey);
+        }
+
+
+        .date
+        {
+            display: flex;
+            align-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            gap: 4px;
+
+
+            .icon
+            {
+                display: block;
+
+                width: 11px;
+
+                opacity: .5;
+                color: #b3adc1;
+
+                aspect-ratio: 1 / 1;
+            }
+        }
+
+
+        .time
+        {
+            display: flex;
+            align-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            gap: 4px;
+
+
+            .icon
+            {
+                display: block;
+
+                width: 11px;
+
+                opacity: .5;
+                color: #b3adc1;
+
+                aspect-ratio: 1 / 1;
+            }
+        }
+
+
+        .views
+        {
+            display: flex;
+            align-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            gap: 4px;
+
+
+            .icon
+            {
+                display: block;
+
+                width: 15px;
+                height: 10px;
+
+                opacity: .5;
+                color: #b3adc1;
+            }
+        }
+
+
+        .link
+        {
+            display: flex;
+            align-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            justify-content: center;
+
+            width: 50px;
+            margin-left: auto;
+
+            text-decoration: none;
+
+            color: var(--light_color);
+            border-radius: 50%;
+            background: var(--primary_strong_color);
+
+            aspect-ratio: 1 / 1;
+
+
+            .icon
+            {
+                display: block;
+
+                width: 6px;
+                height: 10px;
+                margin-left: 2px;
+            }
+        }
+    }
+}
+
+
+
+@media print,
+(max-width: 1279px)
+{
+    .blog
+    {
+        .grid_row
+        {
+            --gap_x: var(--inner_gap);
+            --gap_y: var(--inner_gap);
+        }
+
+
+        .article
+        {
+            .info
+            {
+                padding-block: var(--inner_gap) var(--inner_gap_xs);
+                padding-inline: 0;
+            }
+        }
+    }
+}
+
+
+
+@media print,
+(max-width: 1023px)
+{
+    .blog
+    {
+        .grid_row
+        {
+            --items_per_line: 2;
+        }
+
+
+        .article
+        {
+            .info
+            {
+                padding-inline: var(--inner_gap_xs);
+            }
+        }
+    }
+}
+
+
+
+@media (max-width: 767px)
+{
+    .blog
+    {
+        .grid_row
+        {
+            --items_per_line: 1;
+            --gap_x: var(--inner_gap_xs);
+            --gap_y: var(--inner_gap_xs);
+        }
+
+
+        .article
+        {
+            .thumb
+            {
+                border-radius: var(--border_radius);
+            }
+
+
+            .info
+            {
+                padding-block: var(--inner_gap) var(--inner_gap_xxs);
+                padding-inline: var(--inner_gap_xxs);
+            }
+
+
+            .name
+            {
+                padding-inline: var(--inner_gap_xs);
+
+                font-size: var(--font_size);
+            }
+
+
+            .desc
+            {
+                padding-inline: var(--inner_gap_xs);
+
+                font-size: var(--font_size_xs);
+            }
+
+
+            .bottom
+            {
+                margin-top: var(--inner_gap_xs);
+            }
+        }
+    }
+}

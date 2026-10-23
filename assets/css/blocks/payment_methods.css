@@ -1,0 +1,411 @@
+/*---------------------
+    Payment methods
+---------------------*/
+.payment_methods
+{
+    .data
+    {
+        padding-block: var(--block_padding_l) var(--outside_gap_s);
+
+        border-radius: var(--border_radius_xxl);
+        background: var(--bg_primary_soft);
+    }
+
+
+    .grid_row
+    {
+        padding-inline: var(--outside_gap_s);
+
+        --items_per_line: 2;
+        --gap_x: var(--block_padding_s);
+        --gap_y: var(--block_padding_s);
+    }
+
+
+    .section
+    {
+        display: flex;
+        flex-direction: column;
+        gap: var(--inner_gap);
+
+        padding: var(--block_padding_s);
+
+        border-radius: var(--border_radius_xl);
+        background: var(--bg);
+        box-shadow: 0 5px 40px 0 rgba(0, 0, 0, .05);
+
+
+        .title
+        {
+            margin-bottom: var(--inner_gap_xxs);
+
+            font-family: var(--font_family_secondary);
+            font-size: 21px;
+            font-weight: 800;
+            line-height: 114.286%;
+        }
+
+
+        .divider
+        {
+            width: 100%;
+            height: 1px;
+
+            background: #ebe8f1;
+        }
+
+
+        .item
+        {
+            position: relative;
+
+            display: flex;
+            align-content: flex-start;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: var(--inner_gap);
+
+            border-radius: var(--border_radius);
+
+
+            &.border
+            {
+                margin-top: var(--inner_gap);
+
+
+                &:before
+                {
+                    position: absolute;
+                    inset: calc(var(--inner_gap_xs) * -1);
+
+                    display: block;
+
+                    content: '';
+                    pointer-events: none;
+
+                    border: 1px dashed var(--primary_color);
+                    border-radius: inherit;
+                }
+            }
+
+
+            .icon
+            {
+                display: flex;
+                overflow: hidden;
+                align-content: center;
+                align-items: center;
+                flex-wrap: wrap;
+                justify-content: flex-start;
+
+                width: 80px;
+
+                border-radius: var(--border_radius);
+
+                aspect-ratio: 1 / 1;
+                mix-blend-mode: multiply;
+
+
+                img
+                {
+                    display: block;
+
+                    max-width: 100%;
+                    max-height: 100%;
+                }
+
+
+                & + *
+                {
+                    position: relative;
+
+                    display: flex;
+                    align-self: center;
+                    flex-direction: column;
+                    gap: 8px;
+
+                    width: calc(100% - 80px - var(--inner_gap));
+                }
+            }
+
+
+            .sticker
+            {
+                position: absolute;
+                top: 1px;
+                right: 6px;
+
+                padding-block: 4px;
+                padding-inline: 8px;
+
+                font-size: var(--font_size_xxs);
+                font-weight: 500;
+
+                white-space: nowrap;
+
+                color: #786a94;
+                border-radius: 7px;
+                background: rgba(166, 130, 245, .1);
+            }
+
+
+            .name
+            {
+                width: calc(100% - 120px);
+
+                font-family: var(--font_family_secondary);
+                font-size: var(--font_size_l);
+                font-weight: 800;
+                line-height: 127.778%;
+            }
+
+
+            .desc
+            {
+                font-size: 13px;
+                line-height: 169.231%;
+            }
+        }
+
+
+        .invoice
+        {
+            display: flex;
+            align-content: center;
+            align-items: center;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+            gap: var(--inner_gap);
+
+            min-height: 100px;
+            margin-block: auto calc(var(--inner_gap_xs) * -1);
+            margin-inline: calc(var(--inner_gap_xs) * -1);
+            padding-block: var(--inner_gap_l);
+            padding-inline: var(--block_padding_s) var(--inner_gap);
+
+            border-radius: var(--border_radius);
+            background: rgba(166, 130, 245, .1);
+
+
+            .info
+            {
+                display: flex;
+                flex-direction: column;
+                gap: 2px;
+            }
+
+
+            .name
+            {
+                font-size: var(--font_size_s);
+                font-weight: 600;
+                line-height: 157.143%;
+            }
+
+
+            .desc
+            {
+                display: flex;
+                flex-direction: column;
+                gap: var(--inner_gap_xs);
+
+                font-size: 13px;
+                line-height: 169.231%;
+            }
+
+
+            .btn
+            {
+                display: flex;
+                align-content: center;
+                align-items: center;
+                flex-wrap: nowrap;
+                justify-content: center;
+                gap: 6px;
+
+                height: 40px;
+                padding-inline: var(--inner_gap_s);
+
+                font-size: var(--font_size_xs);
+                font-weight: 500;
+
+                white-space: nowrap;
+
+                color: var(--light_color);
+                border-radius: var(--border_radius_s);
+                background: var(--primary_color);
+                box-shadow: 0 5px 20px 0 rgba(185, 153, 255, .50);
+
+
+                .icon
+                {
+                    display: block;
+
+                    width: 3px;
+                    min-width: 3px;
+                    height: 5px;
+
+                    color: #d3beff;
+                }
+            }
+        }
+    }
+}
+
+
+
+@media print,
+(max-width: 1279px)
+{
+    .payment_methods
+    {
+        .data
+        {
+            margin-inline: calc(var(--cont_padding) * -1);
+            padding-inline: var(--cont_padding);
+
+            border-radius: var(--border_radius_xl);
+        }
+
+
+        .grid_row
+        {
+            padding-inline: 0;
+
+            --gap_x: var(--inner_gap);
+            --gap_y: var(--inner_gap);
+        }
+
+
+        .section
+        {
+            padding: var(--inner_gap_l);
+
+            border-radius: var(--border_radius_l);
+
+
+            .title
+            {
+                font-size: 20px;
+            }
+
+
+            .item
+            {
+                .name
+                {
+                    font-size: var(--font_size);
+                }
+
+
+                .desc
+                {
+                    font-size: var(--font_size_xs);
+                }
+            }
+
+
+            .invoice
+            {
+                padding-block: var(--inner_gap);
+                padding-inline: var(--inner_gap_l) var(--inner_gap);
+
+
+                .desc
+                {
+                    font-size: var(--font_size_xs);
+                }
+            }
+        }
+    }
+}
+
+
+
+@media print,
+(max-width: 1023px)
+{
+    .payment_methods
+    {
+        .data
+        {
+            padding-block: var(--block_padding_l);
+
+            border-radius: var(--border_radius_l);
+        }
+
+
+        .grid_row
+        {
+            --items_per_line: 1;
+            --gap_x: var(--inner_gap_xs);
+            --gap_y: var(--inner_gap_xs);
+        }
+    }
+}
+
+
+
+@media (max-width: 767px)
+{
+    .payment_methods
+    {
+        .section
+        {
+            gap: var(--inner_gap_s);
+
+            padding: var(--inner_gap);
+
+            border-radius: var(--border_radius);
+
+
+            .item
+            {
+                gap: var(--inner_gap_s);
+
+
+                .icon
+                {
+                    width: 60px;
+
+                    border-radius: 15px;
+
+
+                    & + *
+                    {
+                        gap: var(--inner_gap_xxs);
+
+                        width: calc(100% - 60px - var(--inner_gap_s));
+                    }
+                }
+
+
+                .name
+                {
+                    width: 100%;
+                }
+
+
+                .sticker
+                {
+                    position: relative;
+                    top: 0;
+                    right: 0;
+
+                    width: fit-content;
+                }
+            }
+
+
+            .invoice
+            {
+                flex-wrap: wrap;
+                gap: var(--inner_gap_s);
+
+                padding-block: var(--inner_gap_s);
+                padding-inline: var(--inner_gap);
+            }
+        }
+    }
+}

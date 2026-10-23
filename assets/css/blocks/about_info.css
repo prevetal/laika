@@ -12,7 +12,7 @@
         padding: var(--outside_gap_s);
 
         color: var(--light_color);
-        border-radius: var(--border_radius_xl);
+        border-radius: var(--border_radius_xxl);
         background: var(--bg_dark);
     }
 
@@ -101,7 +101,7 @@
         {
             display: block;
 
-            border-radius: 30px;
+            border-radius: var(--border_radius_l);
 
             aspect-ratio: 1 / .639;
 

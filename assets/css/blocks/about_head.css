@@ -35,7 +35,7 @@
         padding-block: var(--inner_gap) var(--block_padding);
         padding-inline: var(--block_padding);
 
-        border-radius: var(--border_radius_l);
+        border-radius: var(--border_radius_xl);
         background: var(--bg);
 
 
@@ -44,7 +44,7 @@
             max-width: calc(100% - 120px);
 
             font-family: var(--font_family_secondary);
-            font-size: var(--font_size_title_l);
+            font-size: var(--font_size_title_xl);
             font-weight: 800;
             line-height: 103.333%;
         }
@@ -91,7 +91,7 @@
 
         pointer-events: none;
 
-        border-radius: 0 0 var(--border_radius_xl) var(--border_radius_xl);
+        border-radius: 0 0 var(--border_radius_xxl) var(--border_radius_xxl);
     }
 }
 
@@ -187,7 +187,7 @@
             {
                 max-width: 100%;
 
-                font-size: 30px;
+                font-size: var(--font_size_title_l);
             }
 
 

@@ -155,7 +155,7 @@
         {
             padding: var(--inner_gap_xs);
 
-            border-radius: var(--border_radius_l);
+            border-radius: var(--border_radius_xl);
         }
     }
 }

@@ -180,4 +180,41 @@ document.addEventListener('DOMContentLoaded', function() {
 			this.close()
 		}
 	})
+
+
+	// Smooth scrolling to anchor
+	const scrollBtns = document.querySelectorAll('.scroll_btn')
+
+	if (scrollBtns) {
+		scrollBtns.forEach(element => {
+			element.addEventListener('click', e => {
+				e.preventDefault()
+
+				let anchor = element.getAttribute('data-anchor')
+
+				document.getElementById(anchor).scrollIntoView({
+					behavior: 'smooth',
+					block: 'start'
+				}, 1000)
+			})
+		})
+	}
+
+
+	// Copy
+	document.querySelectorAll('[data-copy]').forEach((btn) => {
+		btn.addEventListener('click', async () => {
+			await navigator.clipboard.writeText(btn.dataset.copy)
+		})
+	})
+
+
+	// Custom submit
+	$('form').submit(function(e) {
+		e.preventDefault()
+
+		$(this).closest('dialog')[0].close()
+
+		document.getElementById('success_modal').showModal()
+	})
 })

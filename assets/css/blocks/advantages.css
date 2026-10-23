@@ -18,7 +18,7 @@
 
         padding: var(--block_padding_s);
 
-        border-radius: 30px;
+        border-radius: var(--border_radius_l);
         background: var(--bg_primary_soft);
 
 

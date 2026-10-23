@@ -1,0 +1,240 @@
+/*-----------------
+    Self pickup
+-----------------*/
+.self_pickup
+{
+    .data
+    {
+        position: relative;
+
+        overflow: hidden;
+
+        width: 1400px;
+        max-width: 100%;
+        margin-inline: auto;
+        padding-block: var(--block_padding_l) var(--outside_gap_s);
+
+        color: var(--light_color);
+        border-radius: var(--border_radius_xxl);
+        background: var(--bg_dark);
+
+
+        .bg
+        {
+            position: absolute;
+            z-index: 1;
+            top: 50%;
+            right: 8px;
+
+            transform: translateY(-50%);
+            pointer-events: none;
+
+            opacity: .03;
+        }
+
+
+        .cont
+        {
+            position: relative;
+            z-index: 3;
+        }
+    }
+
+
+    .grid_row
+    {
+        --items_per_line: 2;
+        --gap_x: var(--block_padding_s);
+        --gap_y: var(--block_padding_s);
+    }
+
+
+    .info
+    {
+        padding-block: var(--block_padding);
+        padding-inline: var(--block_padding_s);
+
+        border-radius: var(--border_radius_l);
+        background: #222;
+
+
+        & > *
+        {
+            display: flex;
+            align-content: flex-start;
+            align-items: flex-start;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+            gap: var(--inner_gap);
+            column-gap: var(--inner_gap);
+            row-gap: var(--inner_gap_xxs);
+
+            font-size: 13px;
+            line-height: 146.154%;
+        }
+
+
+        & > * + *
+        {
+            margin-top: var(--inner_gap_s);
+            padding-top: var(--inner_gap_s);
+
+            border-top: 1px solid rgba(255, 255, 255, .08);
+        }
+
+
+        .label
+        {
+            white-space: nowrap;
+
+            color: #7b7587;
+        }
+
+
+        .val
+        {
+            font-weight: 600;
+
+            text-align: right;
+
+
+            a
+            {
+                white-space: nowrap;
+                text-decoration: none;
+
+                color: currentColor;
+            }
+        }
+    }
+
+
+    .path
+    {
+        display: flex;
+        flex-direction: column;
+        gap: var(--inner_gap_xs);
+
+
+        .title
+        {
+            font-family: var(--font_family_secondary);
+            font-size: var(--font_size_l);
+            font-weight: 800;
+            line-height: 127.778%;
+        }
+
+
+        .desc
+        {
+            display: flex;
+            flex-direction: column;
+            gap: var(--inner_gap_xs);
+
+            font-size: 13px;
+            line-height: 161.538%;
+
+            opacity: .8;
+        }
+
+
+        .images
+        {
+            margin-top: var(--inner_gap_s);
+
+
+            .grid_row
+            {
+                --items_per_line: 2;
+                --gap_x: var(--inner_gap_xs);
+                --gap_y: var(--inner_gap_xs);
+            }
+
+
+            .image
+            {
+                display: block;
+
+                text-decoration: none;
+
+                color: currentColor;
+            }
+
+
+            .thumb
+            {
+                display: block;
+
+                border-radius: var(--border_radius);
+
+                aspect-ratio: 1 / .642;
+            }
+        }
+    }
+}
+
+
+
+@media print,
+(max-width: 1279px)
+{
+    .self_pickup
+    {
+        .data
+        {
+            border-radius: var(--border_radius_xl);
+        }
+
+
+        .grid_row
+        {
+            --gap_x: var(--inner_gap_l);
+        }
+
+
+        .info
+        {
+            padding-block: var(--inner_gap_l);
+            padding-inline: var(--inner_gap);
+
+            border-radius: var(--border_radius);
+        }
+    }
+}
+
+
+
+@media print,
+(max-width: 1023px)
+{
+    .self_pickup
+    {
+        .data
+        {
+            padding-block: var(--block_padding_l);
+
+            border-radius: var(--border_radius_l);
+
+
+            .bg
+            {
+                display: none;
+            }
+        }
+
+
+        .grid_row
+        {
+            --items_per_line: 1;
+            --gap_x: var(--inner_gap);
+            --gap_y: var(--block_padding);
+        }
+
+
+        .info
+        {
+            padding-block: var(--inner_gap_l);
+            padding-inline: var(--inner_gap_l);
+        }
+    }
+}

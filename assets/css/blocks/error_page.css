@@ -1,0 +1,158 @@
+/*----------------
+    Error page
+----------------*/
+.error_page
+{
+    padding-block: 66px var(--outside_gap);
+
+    text-align: center;
+
+
+    .cont
+    {
+        display: flex;
+        align-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: var(--inner_gap_s);
+    }
+
+
+    .image
+    {
+        img
+        {
+            display: block;
+
+            width: 589px;
+            max-width: 100%;
+            margin-inline: auto;
+        }
+    }
+
+
+    .title
+    {
+        font-family: var(--font_family_secondary);
+        font-size: var(--font_size_title_xl);
+        font-weight: 800;
+        line-height: 98.333%;
+    }
+
+
+    .desc
+    {
+        margin-top: var(--inner_gap_s);
+
+        font-size: var(--font_size_s);
+        line-height: 171.429%;
+    }
+
+
+    .link
+    {
+        display: flex;
+        align-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: var(--inner_gap_xs);
+
+        width: fit-content;
+        height: 65px;
+        margin-top: var(--inner_gap_xs);
+        padding-inline: var(--block_padding_s);
+
+        font-size: var(--font_size_s);
+        font-weight: 600;
+
+        text-decoration: none;
+
+        color: #494d2c;
+        border-radius: var(--border_radius);
+        background: var(--secondary_color);
+
+
+        .icon
+        {
+            display: flex;
+            align-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            justify-content: center;
+
+            width: 14px;
+
+            color: #949a6a;
+            border-radius: 5px;
+            background: var(--bg);
+
+            aspect-ratio: 1 / 1;
+
+
+            svg
+            {
+                display: block;
+
+                width: 4px;
+                height: 6px;
+            }
+        }
+    }
+}
+
+
+
+@media print,
+(max-width: 1279px)
+{
+    .error_page
+    {
+        padding-block: var(--outside_gap_s) var(--outside_gap);
+
+
+        .image
+        {
+            img
+            {
+                width: 543px;
+            }
+        }
+
+
+        .link
+        {
+            height: 60px;
+        }
+    }
+}
+
+
+
+@media print,
+(max-width: 1279px)
+{
+    .error_page
+    {
+        .image
+        {
+            img
+            {
+                width: 500px;
+            }
+        }
+    }
+}
+
+
+
+@media (max-width: 767px)
+{
+    .error_page
+    {
+        .link
+        {
+            width: 100%;
+        }
+    }
+}

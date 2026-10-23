@@ -8,7 +8,7 @@
         padding-block: var(--block_padding_l) var(--outside_gap_s);
         padding-inline: var(--outside_gap_s);
 
-        border-radius: var(--border_radius_xl);
+        border-radius: var(--border_radius_xxl);
         background: var(--bg_primary_soft);
     }
 
@@ -30,7 +30,7 @@
         text-decoration: none;
 
         color: currentColor;
-        border-radius: var(--border_radius_l);
+        border-radius: var(--border_radius_xl);
         background: var(--bg);
         box-shadow: 0 5px 40px 0 rgba(0, 0, 0, .05);
 
@@ -41,7 +41,7 @@
 
             height: 180px;
 
-            border-radius: 30px;
+            border-radius: var(--border_radius_l);
             background: var(--bg_grey);
         }
 
@@ -132,7 +132,7 @@
             text-decoration: none;
 
             color: var(--light_color);
-            border-radius: 30px;
+            border-radius: var(--border_radius_l);
             background: var(--primary_strong_color);
 
 

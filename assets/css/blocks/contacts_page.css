@@ -1,0 +1,488 @@
+/*-------------------
+    Contacts page
+-------------------*/
+.contacts_page
+{
+    .grid
+    {
+        display: flex;
+        align-content: stretch;
+        align-items: stretch;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: var(--inner_gap);
+    }
+
+
+    .map
+    {
+        position: relative;
+
+        overflow: hidden;
+
+        width: calc(100% - 510px - var(--inner_gap));
+
+        border-radius: var(--border_radius_xl);
+        background: var(--bg_primary_soft);
+
+
+        .image
+        {
+            position: absolute;
+            z-index: 5;
+            right: 0;
+            bottom: 48px;
+
+            display: block;
+
+            width: 89px;
+
+            pointer-events: none;
+
+
+            img
+            {
+                display: block;
+
+                width: 100%;
+            }
+        }
+    }
+
+
+    .data
+    {
+        width: 510px;
+        max-width: 100%;
+        padding: var(--block_padding_l);
+
+        border-radius: var(--border_radius_xl);
+        background: var(--bg_primary_soft);
+
+
+        .grid_row
+        {
+            --items_per_line: 2;
+        }
+
+
+        .divider
+        {
+            height: 1px;
+
+            background: #ebe8f1;
+
+            --width_multiplier: 2;
+        }
+
+
+        .item
+        {
+            display: flex;
+            flex-direction: column;
+            gap: var(--inner_gap_xxs);
+
+
+            &.l_w
+            {
+                --width_multiplier: 2;
+            }
+
+
+            .grid_row
+            {
+                --width_multiplier: 1;
+            }
+
+
+            .label
+            {
+                font-size: 13px;
+                font-weight: 600;
+                line-height: 146.154%;
+
+                color: var(--primary_strong_color);
+            }
+
+
+            .val
+            {
+                font-size: var(--font_size_l);
+                font-weight: 600;
+                line-height: 144.444%;
+
+
+                a
+                {
+                    white-space: nowrap;
+                    text-decoration: none;
+
+                    color: currentColor;
+                }
+            }
+
+
+            .exp
+            {
+                font-size: 13px;
+                line-height: 146.154%;
+
+                color: #7b7587;
+            }
+
+
+            .messengers
+            {
+                display: flex;
+                align-content: center;
+                align-items: center;
+                flex-wrap: wrap;
+                justify-content: flex-start;
+                gap: var(--inner_gap_xs);
+
+
+                a
+                {
+                    display: flex;
+                    align-content: center;
+                    align-items: center;
+                    flex-wrap: wrap;
+                    justify-content: center;
+
+                    width: 38px;
+
+                    text-decoration: none;
+
+                    color: var(--light_color);
+                    border-radius: var(--border_radius_s);
+                    border-radius: var(--border_radius_s);
+                    box-shadow: 0 2px 15px 0 rgba(0, 0, 0, .07);
+
+                    aspect-ratio: 1 / 1;
+
+
+                    &.tg_link
+                    {
+                        background: linear-gradient(180deg, #2aabec 0%, #0f91d2 100%);
+
+
+                        .icon
+                        {
+                            width: 17px;
+                            height: 14px;
+                        }
+                    }
+
+
+                    &.max_link
+                    {
+                        background: linear-gradient(225deg, #8145e4 0%, #4f34e7 35.58%, #2c82f5 67.79%, #40c3fb 100%);
+
+
+                        .icon
+                        {
+                            width: 15px;
+                            height: 15px;
+                        }
+                    }
+
+
+                    &.whatsapp_link
+                    {
+                        background: linear-gradient(180deg, #5be37d 0%, #1fb855 100%);
+
+
+                        .icon
+                        {
+                            width: 18px;
+                            height: 19px;
+                        }
+                    }
+
+
+                    &.vk_link
+                    {
+                        background: linear-gradient(180deg, #2787f5 0%, #0063e0 100%);
+
+
+
+                        .icon
+                        {
+                            width: 20px;
+                            height: 13px;
+                        }
+                    }
+
+
+                    .icon
+                    {
+                        display: block;
+                    }
+                }
+            }
+        }
+
+
+        .btns
+        {
+            display: flex;
+            align-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: var(--inner_gap_xs);
+
+            margin-top: var(--block_padding);
+
+
+            .btn
+            {
+                display: flex;
+                align-content: center;
+                align-items: center;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: var(--inner_gap_xs);
+
+                width: calc(50% - var(--inner_gap_xs) / 2);
+                height: 65px;
+                padding-inline: var(--inner_gap_s);
+
+                font-size: var(--font_size_s);
+                font-weight: 600;
+
+                color: #494d2c;
+                border-radius: var(--border_radius);
+                background: var(--secondary_color);
+
+
+                .icon
+                {
+                    display: flex;
+                    align-content: center;
+                    align-items: center;
+                    flex-wrap: wrap;
+                    justify-content: center;
+
+                    width: 14px;
+
+                    color: #949a6a;
+                    border-radius: 5px;
+                    background: var(--bg);
+
+                    aspect-ratio: 1 / 1;
+
+
+                    svg
+                    {
+                        display: block;
+
+                        width: 4px;
+                        height: 6px;
+                    }
+                }
+            }
+
+
+            .path_btn
+            {
+                display: flex;
+                align-content: center;
+                align-items: center;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: var(--inner_gap_xs);
+
+                width: calc(50% - var(--inner_gap_xs) / 2);
+                height: 65px;
+                padding-inline: var(--inner_gap_s);
+
+                font-size: var(--font_size_s);
+                font-weight: 600;
+
+                color: var(--light_color);
+                border-radius: var(--border_radius);
+                background: var(--primary_color);
+                box-shadow: 0 5px 20px 0 rgba(185, 153, 255, .50);
+
+
+                .icon
+                {
+                    display: flex;
+                    align-content: center;
+                    align-items: center;
+                    flex-wrap: wrap;
+                    justify-content: center;
+
+                    width: 14px;
+
+                    color: var(--primary_strong_color);
+                    border-radius: 5px;
+                    background: var(--bg);
+
+                    aspect-ratio: 1 / 1;
+
+
+                    svg
+                    {
+                        display: block;
+
+                        width: 6px;
+                        height: 6px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+@media print,
+(max-width: 1279px)
+{
+    .contacts_page
+    {
+        .map
+        {
+            width: calc(100% - 400px - var(--inner_gap));
+
+            border-radius: var(--border_radius_l);
+        }
+
+
+        .data
+        {
+            width: 400px;
+            padding: var(--inner_gap_l);
+
+            border-radius: var(--border_radius_l);
+
+
+            .item
+            {
+                .val
+                {
+                    font-size: var(--font_size);
+                }
+
+
+                .exp
+                {
+                    font-size: var(--font_size_xs);
+                }
+            }
+
+
+            .btns
+            {
+                .btn,
+                .path_btn
+                {
+                    width: 100%;
+                    height: 60px;
+                }
+            }
+        }
+    }
+}
+
+
+
+@media print,
+(max-width: 1023px)
+{
+    .contacts_page
+    {
+        .map
+        {
+            order: 2;
+
+            width: 100%;
+            height: 400px;
+
+            border-radius: var(--border_radius);
+
+
+            .image
+            {
+                bottom: var(--inner_gap_l);
+
+                width: 80px;
+            }
+        }
+
+
+        .data
+        {
+            width: 100%;
+
+            border-radius: var(--border_radius);
+
+
+            .btns
+            {
+                .btn,
+                .path_btn
+                {
+                    width: calc(50% - var(--inner_gap_xs) / 2);
+                }
+            }
+        }
+    }
+}
+
+
+
+@media (max-width: 767px)
+{
+    .contacts_page
+    {
+        .map
+        {
+            height: 300px;
+
+
+            .image
+            {
+                bottom: var(--inner_gap);
+
+                width: 60px;
+            }
+        }
+
+
+        .data
+        {
+            .grid_row
+            {
+                --items_per_line: 1;
+            }
+
+
+            .divider
+            {
+                --width_multiplier: 1;
+            }
+
+
+            .item
+            {
+                &.l_w
+                {
+                    --width_multiplier: 1;
+                }
+            }
+
+
+            .btns
+            {
+                .btn,
+                .path_btn
+                {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

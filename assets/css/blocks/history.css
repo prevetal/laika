@@ -9,7 +9,7 @@
         padding-inline: var(--outside_gap_s);
 
         color: var(--light_color);
-        border-radius: var(--border_radius_xl);
+        border-radius: var(--border_radius_xxl);
         background: var(--bg_dark);
     }
 
@@ -134,7 +134,7 @@
                 content: '';
                 pointer-events: none;
 
-                background: url(../images/bg_now.svg) 0 0/100% 100% no-repeat;
+                background: url(../../../images/bg_now.svg) 0 0/100% 100% no-repeat;
             }
         }
 

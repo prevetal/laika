@@ -185,7 +185,7 @@
 
         padding: var(--block_padding_s);
 
-        border-radius: var(--border_radius_l);
+        border-radius: var(--border_radius_xl);
         background: var(--light_color);
         box-shadow: 0 5px 40px 0 rgba(0, 0, 0, .05);
 
@@ -213,7 +213,7 @@
 
                 content: '';
 
-                background: url(../images/ic_quote.svg)0 0/100% 100% no-repeat;
+                background: url(../../../images/ic_quote.svg)0 0/100% 100% no-repeat;
             }
 
 
